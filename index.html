@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5a3f78">
+  <title>MyMoney — Dashboard Keuangan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark">M</span><span><b>MyMoney</b><small>PERSONAL FINANCE</small></span></a>
+    <div class="nav-label">MENU UTAMA</div>
+    <nav class="nav-list">
+      <a class="nav-link active" href="index.html"><span>▦</span> Dashboard</a>
+      <a class="nav-link" href="transaksi.html"><span>↕</span> Transaksi</a>
+      <a class="nav-link" href="sumber-dana.html"><span>▣</span> Sumber Dana</a>
+      <a class="nav-link" href="tabungan.html"><span>◉</span> Tabungan</a>
+      <a class="nav-link" href="laporan.html"><span>▤</span> Laporan</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="tip-card"><span class="tip-icon">✦</span><b>Pelan-pelan, ya.</b><p>Kebiasaan kecil mencatat uang bisa bikin keputusanmu lebih baik.</p></div>
+      <a class="nav-link" href="pengaturan.html"><span>⚙</span> Pengaturan & Backup</a>
+    </div>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button><div><p class="eyebrow" id="todayLabel">RINGKASAN KEUANGAN</p><h1>Dashboard</h1></div><div class="top-actions"><span class="today-chip" id="todayChip"></span><a class="avatar" href="pengaturan.html">MM</a></div></header>
+    <section class="welcome-row"><div><h2>Halo, selamat datang! <span>✦</span></h2><p>Yuk, cek kondisi keuanganmu hari ini.</p></div><a class="button primary" href="transaksi.html#formTransaksi">＋ Tambah transaksi</a></section>
+    <section class="summary-grid">
+      <article class="summary-card balance-card"><div class="card-top"><span>Total uang tercatat</span><span class="icon-bubble">◈</span></div><h2 id="totalBalance">Rp0</h2><p>Seluruh sumber dana yang kamu kelola</p><div class="card-foot"><span class="dot light"></span> <span id="sourceCount">0 sumber dana</span></div></article>
+      <article class="summary-card"><div class="card-top"><span>Pemasukan bulan ini</span><span class="icon-bubble green">↙</span></div><h2 class="positive" id="monthIncome">Rp0</h2><p>Uang yang masuk bulan ini</p><div class="card-foot"><span class="mini-dot green-bg"></span> Pemasukan</div></article>
+      <article class="summary-card"><div class="card-top"><span>Pengeluaran bulan ini</span><span class="icon-bubble pink">↗</span></div><h2 class="negative" id="monthExpense">Rp0</h2><p>Uang yang keluar bulan ini</p><div class="card-foot"><span class="mini-dot pink-bg"></span> Pengeluaran</div></article>
+      <article class="summary-card"><div class="card-top"><span>Total tabungan</span><span class="icon-bubble gold">♧</span></div><h2 id="totalSavings">Rp0</h2><p>Saldo yang dialokasikan ke tujuan</p><div class="card-foot"><span class="mini-dot gold-bg"></span> Dana tersimpan</div></article>
+    </section>
+    <section class="content-grid">
+      <article class="panel wide-panel"><div class="panel-heading"><div><h3>Arus keuangan</h3><p>Ringkasan pemasukan dan pengeluaran 6 bulan terakhir</p></div><a href="laporan.html" class="text-link">Lihat laporan ↗</a></div><div class="chart-legend"><span><i class="legend-dot income-dot"></i> Pemasukan</span><span><i class="legend-dot expense-dot"></i> Pengeluaran</span></div><div class="chart" id="cashflowChart"><div class="empty-state">Belum ada data transaksi untuk ditampilkan.</div></div></article>
+      <article class="panel"><div class="panel-heading"><div><h3>Sumber dana</h3><p>Saldo di setiap tempat</p></div><a href="sumber-dana.html" class="text-link">Kelola</a></div><div id="walletPreview" class="wallet-list"></div></article>
+    </section>
+    <section class="content-grid lower-grid">
+      <article class="panel"><div class="panel-heading"><div><h3>Transaksi terbaru</h3><p>Aktivitas keuangan terakhir</p></div><a href="transaksi.html" class="text-link">Semua transaksi ↗</a></div><div id="recentTransactions" class="transaction-list"></div></article>
+      <article class="panel"><div class="panel-heading"><div><h3>Target tabungan</h3><p>Langkah kecil menuju tujuanmu</p></div><a href="tabungan.html" class="text-link">Lihat semua</a></div><div id="savingsPreview" class="savings-list"></div></article>
+    </section>
+    <footer class="footer">MyMoney Tracker <span>•</span> Data tersimpan di browser perangkat ini.</footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+</body></html>
